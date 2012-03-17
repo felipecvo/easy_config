@@ -1,0 +1,7 @@
+development:
+  host: 'localhost'
+  port: 4567
+
+production:
+  host: 'redis.easyconfig.com'
+  port: 9840

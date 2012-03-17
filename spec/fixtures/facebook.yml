@@ -1,0 +1,3 @@
+app_id: 1234
+permissions:
+  roles: 'master'
