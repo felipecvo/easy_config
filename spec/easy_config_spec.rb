@@ -1,6 +1,9 @@
 require 'spec_helper'
 
 describe EasyConfig do
+  before { EasyConfig::PathResolver.config_path = './spec/fixtures' }
+  after { EasyConfig::PathResolver.config_path = nil }
+
   context "mising methods" do
     it 'should treat it' do
       lambda { EasyConfig.facebook }.should_not raise_error

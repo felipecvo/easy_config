@@ -11,7 +11,7 @@ describe EasyConfig::ConfigFile do
   end
 
   context "specific file" do
-    subject { EasyConfig::ConfigFile.all.first }
+    subject { EasyConfig::ConfigFile.all.find { |c| c.name == :facebook } }
     it { should_not be_nil }
     its(:name) { should eq :facebook }
     its(:configuration) { should_not be_nil }
