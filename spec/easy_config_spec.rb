@@ -1,10 +1,7 @@
 require 'spec_helper'
 
 describe EasyConfig do
-  before {
-    puts File.expand_path('./spec/fixtures')
-    EasyConfig::PathResolver.config_path = File.expand_path('./spec/fixtures')
-  }
+  before { EasyConfig::PathResolver.config_path = File.expand_path('./spec/fixtures') }
   after { EasyConfig::PathResolver.config_path = nil }
 
   context "mising methods" do
@@ -15,12 +12,14 @@ describe EasyConfig do
 
   context "access per env config file" do
     subject { EasyConfig.redis }
+    it { should be_a EasyConfig::Configuration }
     its(:host) { should eq 'localhost' }
     its(:port) { should eq 4567 }
   end
 
   context "access simle config file" do
     subject { EasyConfig.github }
+    it { should be_a EasyConfig::Configuration }
     its(:user) { should eq 'felipecvo' }
   end
 
