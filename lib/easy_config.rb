@@ -33,6 +33,8 @@ module EasyConfig
 
   def self.reset!
     EasyConfig::ConfigFile.reset!
+    @loaded = false
+    setup_config
   end
 end
 
