@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    easy_config (0.0.1)
+    easy_config (0.0.2)
       methodize (~> 0.2.1)
 
 GEM
