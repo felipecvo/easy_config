@@ -23,4 +23,8 @@ class EasyConfig::ConfigFile
       EasyConfig::ConfigFile.new path
     end
   end
+
+  def self.reset!
+    @all = nil
+  end
 end

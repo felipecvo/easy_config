@@ -1,8 +1,8 @@
 require 'spec_helper'
 
 describe EasyConfig do
-  before { EasyConfig::PathResolver.config_path = File.expand_path('./spec/fixtures') }
-  after { EasyConfig::PathResolver.config_path = nil }
+  before { EasyConfig.config_path = File.expand_path('./spec/fixtures') }
+  after { EasyConfig.config_path = nil }
 
   context "mising methods" do
     it 'should treat it' do
