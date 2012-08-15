@@ -2,8 +2,25 @@ module EasyConfig
   class UnknownConfigPath < ArgumentError; end
 
   def self.method_missing(name)
-    file = nil
-    file.configuration if file = EasyConfig::ConfigFile.all.find { |f| f.name == name }
+    unless @loaded
+      setup_config
+      self.send name
+    end
+  end
+
+  def self.setup_config
+    EasyConfig::ConfigFile.all.each do |f|
+      add_config_method(f)
+    end
+    @loaded = true
+  end
+
+  def self.add_config_method(config)
+    (class << self; self; end).instance_eval do
+      define_method config.name do
+        config.configuration
+      end
+    end
   end
 
   def self.config_path=(path)
