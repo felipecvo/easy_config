@@ -32,5 +32,11 @@ describe EasyConfig::PathResolver do
       after { Object.send(:remove_const, :Rails) }
       it { should eq "./config/*.yml" }
     end
+
+    context "unknow config path" do
+      it "should throw exception" do
+        lambda { EasyConfig::PathResolver.config_path }.should raise_error(EasyConfig::UnknownConfigPath)
+      end
+    end
   end
 end

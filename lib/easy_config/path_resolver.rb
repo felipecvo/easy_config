@@ -10,6 +10,8 @@ module EasyConfig::PathResolver
       File.join(Rails.root, 'config', '*.yml')
     elsif defined?(Sinatra)
       File.join(Sinatra::Application.root, 'config', '*.yml')
+    else
+      raise EasyConfig::UnknownConfigPath.new
     end
   end
 end

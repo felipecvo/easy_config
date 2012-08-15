@@ -1,4 +1,6 @@
 module EasyConfig
+  class UnknownConfigPath < ArgumentError; end
+
   def self.method_missing(name)
     file = nil
     file.configuration if file = EasyConfig::ConfigFile.all.find { |f| f.name == name }
