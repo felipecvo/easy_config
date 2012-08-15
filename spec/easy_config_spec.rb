@@ -24,7 +24,8 @@ describe EasyConfig do
   end
 
   context "inexistent files" do
-    subject { EasyConfig.no_exist }
-    it { should be_nil }
+    it 'should throw exception' do
+      lambda { EasyConfig.no_exist }.should raise_error(EasyConfig::ConfigurationNotFound)
+    end
   end
 end

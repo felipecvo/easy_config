@@ -1,10 +1,13 @@
 module EasyConfig
+  class ConfigurationNotFound < NoMethodError; end
   class UnknownConfigPath < ArgumentError; end
 
   def self.method_missing(name)
     unless @loaded
       setup_config
       self.send name
+    else
+      raise ConfigurationNotFound.new("Configuration for '#{name}' was not found.")
     end
   end
 
