@@ -27,4 +27,15 @@ describe EasyConfig do
       lambda { EasyConfig.no_exist }.should raise_error(EasyConfig::ConfigurationNotFound)
     end
   end
+
+  context "default environment" do
+    subject { EasyConfig.environment }
+    it { should eq "development" }
+  end
+
+  context "set custom environment" do
+    before { EasyConfig.environment = "test" }
+    subject { EasyConfig.environment }
+    it { should eq "test" }
+  end
 end

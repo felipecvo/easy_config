@@ -36,6 +36,14 @@ module EasyConfig
     @loaded = false
     setup_config
   end
+
+  def self.environment
+    EasyConfig::Env.current
+  end
+
+  def self.environment=(env)
+    EasyConfig::Env.set(env)
+  end
 end
 
 require 'easy_config/config_file'
