@@ -46,6 +46,7 @@ module EasyConfig
   end
 end
 
+require 'yaml'
 require 'easy_config/config_file'
 require 'easy_config/configuration'
 require 'easy_config/env'
