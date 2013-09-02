@@ -5,11 +5,11 @@ Rails and Rack applications configuration made easy.
 
 # Installation
 
-`gem install easy-config`
+`gem install easy_config`
 
 or in your Gemfile
 
-`gem "easy-config"`
+`gem "easy_config"`
 
 # How it works
 
