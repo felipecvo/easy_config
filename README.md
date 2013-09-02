@@ -1,7 +1,7 @@
 # Easy config
 Rails and Rack applications configuration made easy.
 
-[![Build Status](https://secure.travis-ci.org/felipecvo/easy_config.png?branch=master)](http://travis-ci.org/felipecvo/easy_config)
+[![Build Status](https://secure.travis-ci.org/felipecvo/easy_config.png?branch=master)](http://travis-ci.org/felipecvo/easy\_config)
 
 # Installation
 
@@ -25,10 +25,16 @@ We can access database.yml file as:
 
 `EasyConfig.database.adapter`
 
-And if you have your our custom config file named my_customs.yml:
+And if you have your our custom config file named my\_customs.yml:
 
 `EasyConfig.my_customs.custom_var`
 
+# Supported rubies
+
+* 2.0.0
+* 1.9.3
+* ree
+
 # TODO
 
-Support ENV['DATABASE_URL'] to EasyConfig.database.url
+Support ENV['DATABASE\_URL'] to EasyConfig.database.url
