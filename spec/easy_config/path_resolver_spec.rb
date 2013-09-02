@@ -2,6 +2,8 @@ require 'spec_helper'
 
 describe EasyConfig::PathResolver do
   context "#config_path" do
+    before { EasyConfig::PathResolver.config_path = nil }
+
     context "resolve Rails config dir" do
       before { module ::Rails; def self.root; "./"; end; end }
       after { Object.send(:remove_const, :Rails) }
