@@ -34,7 +34,11 @@ describe EasyConfig do
   end
 
   context "set custom environment" do
-    before { EasyConfig.environment = "test" }
+    before do
+      @env = EasyConfig.environment
+      EasyConfig.environment = "test"
+    end
+    after { EasyConfig.environment = @env }
     subject { EasyConfig.environment }
     it { should eq "test" }
   end
