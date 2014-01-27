@@ -38,3 +38,7 @@ And if you have your our custom config file named my\_customs.yml:
 # TODO
 
 Support ENV['DATABASE\_URL'] to EasyConfig.database.url
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/felipecvo/easy_config/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
