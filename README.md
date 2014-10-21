@@ -31,7 +31,8 @@ And if you have your our custom config file named my\_customs.yml:
 
 # Supported rubies
 
-* 2.0.0
+* 2.1
+* 2.0
 * 1.9.3
 * ree
 
