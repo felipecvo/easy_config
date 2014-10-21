@@ -18,6 +18,7 @@ Gem::Specification.new do |s|
   s.require_path = 'lib'
 
   s.add_dependency "methodize", "~> 0.2.1"
+  s.add_dependency "erubis"
 
   s.add_development_dependency "bundler", ">= 1.0.0"
   s.add_development_dependency "rspec", "~> 2.9.0"
