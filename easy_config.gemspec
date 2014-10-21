@@ -3,6 +3,7 @@ require File.expand_path("../lib/easy_config/version", __FILE__)
 Gem::Specification.new do |s|
   s.name        = 'easy_config'
   s.version     = EasyConfig::VERSION
+  s.licenses    = ['MIT']
   s.date        = '2012-03-17'
   s.summary     = "Easy config, Rails and Rack application's configuration made easy."
   s.description = s.summary

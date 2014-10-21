@@ -43,3 +43,8 @@ Support ENV['DATABASE\_URL'] to EasyConfig.database.url
 
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/felipecvo/easy_config/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 
+# License
+
+[The MIT License](http://opensource.org/licenses/MIT)
+
+Copyright (c) 2012-2014 Felipe Oliveira <[http://felipecvo.github.io/](http://felipecvo.github.io/)>
