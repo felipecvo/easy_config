@@ -29,4 +29,14 @@ describe EasyConfig::ConfigFile do
     its('configuration.host') { should eq 'localhost' }
     its('configuration.port') { should eq 4567 }
   end
+
+  context "ERB support" do
+    before do
+      ENV['redis_password'] = 'sTrOnGpAssWorD'
+      EasyConfig.reset!
+    end
+
+    subject { EasyConfig::ConfigFile.all.find { |c| c.name == :redis } }
+    its('configuration.password') { should eq 'sTrOnGpAssWorD' }
+  end
 end

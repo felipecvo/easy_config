@@ -1,6 +1,7 @@
 development:
   host: 'localhost'
   port: 4567
+  password: <%= ENV['redis_password'] %>
 
 production:
   host: 'redis.easyconfig.com'

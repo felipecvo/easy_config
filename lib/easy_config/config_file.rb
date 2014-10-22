@@ -11,11 +11,17 @@ class EasyConfig::ConfigFile
   end
 
   def create_configuration
-    yaml = YAML::load_file(@path)
+    yaml = yaml_data
 
     yaml = yaml[EasyConfig::Env.current] if EasyConfig::Env.has_environment?(yaml)
 
     EasyConfig::Configuration.new(yaml)
+  end
+
+  def yaml_data
+    input = File.read(@path)
+    eruby = ERB.new(input)
+    YAML.load(eruby.result)
   end
 
   def self.all
