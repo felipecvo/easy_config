@@ -1,17 +1,33 @@
 module EasyConfig::PathResolver
-  def self.config_path=(value)
-    @config_path = value
-  end
+  class << self
+    def config_path=(value)
+      value = File.join(value, '*.yml') unless value.nil? or /\*\.ya?ml$/ =~ value
+      @config_path = value
+    end
 
-  def self.config_path
-    if defined?(@config_path) and @config_path
-      File.join(@config_path, '*.yml')
-    elsif defined?(Rails)
-      File.join(Rails.root, 'config', '*.yml')
-    elsif defined?(Sinatra)
-      File.join(Sinatra::Application.root, 'config', '*.yml')
-    else
-      raise EasyConfig::UnknownConfigPath.new
+    def config_path
+      @config_path ||= File.join(default_config_path!, '*.yml')
+    end
+
+    def config_paths
+      @config_paths ||= [default_config_path].compact
+    end
+
+    def clear!
+      @config_paths = nil
+    end
+
+    private
+    def default_config_path!
+      default_config_path or raise EasyConfig::UnknownConfigPath.new
+    end
+
+    def default_config_path
+      if defined?(Rails)
+        File.join(Rails.root, 'config')
+      elsif defined?(Sinatra)
+        File.join(Sinatra::Application.root, 'config')
+      end
     end
   end
 end
