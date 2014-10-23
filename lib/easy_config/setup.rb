@@ -25,7 +25,8 @@ module EasyConfig
     end
 
     def config_path=(path)
-      EasyConfig::PathResolver.config_path = path
+      EasyConfig::PathResolver.clear!
+      EasyConfig::PathResolver.config_paths << path
       self.reset!
     end
 

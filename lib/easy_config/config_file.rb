@@ -24,13 +24,24 @@ class EasyConfig::ConfigFile
     YAML.load(eruby.result)
   end
 
-  def self.all
-    @all ||= Dir.glob(EasyConfig::PathResolver.config_path).map do |path|
-      EasyConfig::ConfigFile.new path
+  class << self
+    def all
+      @all ||= load_all
     end
-  end
 
-  def self.reset!
-    @all = nil
+    def reset!
+      @all = nil
+    end
+
+    private
+    def load_all
+      all = []
+      EasyConfig::PathResolver.config_paths.each do |config_path|
+        Dir.glob(File.join(config_path, '*.yml')).each do |yaml_file|
+          all << EasyConfig::ConfigFile.new(yaml_file)
+        end
+      end
+      all
+    end
   end
 end

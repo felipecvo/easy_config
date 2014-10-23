@@ -7,7 +7,6 @@ require 'easy_config/path_resolver'
 
 module EasyConfig
   class ConfigurationNotFound < NoMethodError; end
-  class UnknownConfigPath < ArgumentError; end
 
   extend Setup
 end
