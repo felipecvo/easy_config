@@ -17,7 +17,7 @@ Gem::Specification.new do |s|
   s.test_files   = `git ls-files -- {spec}/*`.split("\n")
   s.require_path = 'lib'
 
-  s.add_dependency "methodize", "~> 0.2.1"
+  s.add_dependency "methodize", "~> 0.2"
   s.add_dependency "erubis"
 
   s.add_development_dependency "bundler", ">= 1.0.0"

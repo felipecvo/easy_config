@@ -4,6 +4,7 @@ Rails and Rack applications configuration made easy.
 [![Build Status](https://secure.travis-ci.org/felipecvo/easy_config.png?branch=master)](http://travis-ci.org/felipecvo/easy\_config)
 [![Code Climate](https://codeclimate.com/github/felipecvo/easy_config/badges/gpa.svg)](https://codeclimate.com/github/felipecvo/easy_config)
 [![Test Coverage](https://codeclimate.com/github/felipecvo/easy_config/badges/coverage.svg)](https://codeclimate.com/github/felipecvo/easy_config)
+[![Dependency Status](https://gemnasium.com/felipecvo/easy_config.svg)](https://gemnasium.com/felipecvo/easy_config)
 
 ## Installation
 
