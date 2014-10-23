@@ -7,11 +7,15 @@ Rails and Rack applications configuration made easy.
 
 ## Installation
 
+[![Gem Version](https://badge.fury.io/rb/easy_config.svg)](http://badge.fury.io/rb/easy_config)
+
 `gem install easy_config`
 
 or in your Gemfile
 
 `gem "easy_config"`
+
+See [Changelog](CHANGELOG.md).
 
 ## How it works
 
