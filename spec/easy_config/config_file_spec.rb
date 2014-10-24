@@ -28,6 +28,16 @@ describe EasyConfig::ConfigFile do
     its(:configuration) { should be_a EasyConfig::Configuration }
     its('configuration.host') { should eq 'localhost' }
     its('configuration.port') { should eq 4567 }
+
+    context "with unknown env" do
+      before do
+        EasyConfig::Env.set('foobar')
+        EasyConfig::ConfigFile.reset!
+      end
+      after { EasyConfig::Env.set(nil) }
+      subject { EasyConfig::ConfigFile.all.find { |c| c.name == :redis } }
+      its('configuration.port') { should be_nil }
+    end
   end
 
   context "ERB support" do

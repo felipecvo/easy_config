@@ -1,6 +1,9 @@
-development:
-  host: 'localhost'
+default: &default
   port: 4567
+
+development:
+  <<: *default
+  host: 'localhost'
   password: <%= ENV['redis_password'] %>
 
 production:
