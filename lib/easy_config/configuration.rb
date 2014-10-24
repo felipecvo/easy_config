@@ -1,5 +1,4 @@
 require 'methodize'
-require 'byebug'
 
 class EasyConfig::Configuration
   def initialize(config)
