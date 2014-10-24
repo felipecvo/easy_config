@@ -1,3 +1,7 @@
+## 0.9.2 - 2014-10-24
+
+* Remove reference to byebug.
+
 ## 0.9.1 - 2014-10-24
 
 * Fix issue #6. Rescue error raised in method missing
