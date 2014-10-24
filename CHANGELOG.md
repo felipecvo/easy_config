@@ -1,3 +1,7 @@
+## 0.9.1 - 2014-10-24
+
+* Fix issue #6. Rescue error raised in method missing
+
 ## 0.9.0 - 2014-10-23
 
 * Support to ERB inside yaml config file (#2)
