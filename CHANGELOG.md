@@ -1,3 +1,8 @@
+## 0.9.3 - 2014-10-26
+
+* Remove methodize dependency.
+* Fix support to 1.8.7
+
 ## 0.9.2 - 2014-10-24
 
 * Remove reference to byebug.
