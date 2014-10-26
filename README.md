@@ -41,7 +41,7 @@ And if you have your our custom config file named my\_customs.yml:
 * 2.1
 * 2.0
 * 1.9.3
-* ree
+* ree (will be dropped after 1.0)
 
 ## License
 
