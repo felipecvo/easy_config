@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    easy_config (0.9.3)
+    easy_config (1.0.0)
       erubis
 
 GEM
