@@ -4,6 +4,8 @@ if RUBY_VERSION > "1.8.7"
   CodeClimate::TestReporter.start
 end
 
+ENV['APP_ENV'] = 'dev'
+
 require 'easy_config'
 
 ENV['RACK_ENV'] = nil

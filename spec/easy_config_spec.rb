@@ -59,4 +59,8 @@ describe EasyConfig do
       EasyConfig.twitter.consumer_key.should eq "YOUR_CONSUMER_KEY"
     end
   end
+
+  it "returns value from environment variables" do
+    EasyConfig.app.env.should eq 'dev'
+  end
 end
