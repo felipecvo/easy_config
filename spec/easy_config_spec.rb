@@ -1,7 +1,10 @@
 require 'spec_helper'
 
 describe EasyConfig do
-  before { EasyConfig.config_path = File.expand_path('./spec/fixtures') }
+  before do
+    EasyConfig.reset!
+    EasyConfig.append_config_path File.expand_path('./spec/fixtures/config')
+  end
 
   context "mising methods" do
     it 'should treat it' do

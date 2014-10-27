@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe EasyConfig::ConfigFile do
-  before { EasyConfig::PathResolver.config_paths << './spec/fixtures' }
+  before { EasyConfig::PathResolver.config_paths << './spec/fixtures/config' }
   after { EasyConfig::PathResolver.clear! }
 
   context "all files" do
