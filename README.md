@@ -56,6 +56,12 @@ Code:
 ```
 Output will be: "value"
 
+### Environment Variables
+```
+  # ENV['APP_API_KEY'] = '1234567890'
+  puts EasyConfig.app.api_key
+```
+
 ## How it works
 
 EasyConfig allows you to access your config files easily. All you have to do is
