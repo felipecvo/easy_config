@@ -1,3 +1,8 @@
+## 1.0.0 - 2014-10-27
+
+* Add support for env vars (#4).
+* Add easy support to multiple config paths
+
 ## 0.9.3 - 2014-10-26
 
 * Remove methodize dependency.
