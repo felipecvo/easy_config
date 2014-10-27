@@ -1,14 +1,14 @@
 # Easy config
-Rails and Rack applications configuration made easy.
 
+[![Gem Version](https://badge.fury.io/rb/easy_config.svg)](http://badge.fury.io/rb/easy_config)
 [![Build Status](https://secure.travis-ci.org/felipecvo/easy_config.png?branch=master)](http://travis-ci.org/felipecvo/easy\_config)
 [![Code Climate](https://codeclimate.com/github/felipecvo/easy_config/badges/gpa.svg)](https://codeclimate.com/github/felipecvo/easy_config)
 [![Test Coverage](https://codeclimate.com/github/felipecvo/easy_config/badges/coverage.svg)](https://codeclimate.com/github/felipecvo/easy_config)
 [![Dependency Status](https://gemnasium.com/felipecvo/easy_config.svg)](https://gemnasium.com/felipecvo/easy_config)
 
-## Installation
+Rails and Rack applications configuration made easy.
 
-[![Gem Version](https://badge.fury.io/rb/easy_config.svg)](http://badge.fury.io/rb/easy_config)
+## Install
 
 `gem install easy_config`
 
@@ -16,7 +16,29 @@ or in your Gemfile
 
 `gem "easy_config"`
 
-See [Changelog](CHANGELOG.md).
+## Usage
+
+### Rails/Sinatra
+Inside config dir, create a file redis.yml:
+```
+development:
+  host: 127.0.0.1
+  port: 6379
+  password:
+production:
+  host: 172.0.0.1
+  port: 6379
+  password: "alpha"
+```
+
+In your ruby code, you do:
+```ruby
+  Redis.current = Redis.new({
+    host: EasyConfig.redis.host,
+    port: EasyConfig.redis.port,
+    password: EasyConfig.redis.password
+  })
+```
 
 ## How it works
 
@@ -25,16 +47,6 @@ to put your files in config dir and be a valid YAML file (with .yml as extension
 
 If you desire you can split your configurations by environment. Easy config treats it
 automatically.
-
-### Example
-
-We can access database.yml file as:
-
-`EasyConfig.database.adapter`
-
-And if you have your our custom config file named my\_customs.yml:
-
-`EasyConfig.my_customs.custom_var`
 
 ## Supported rubies
 
