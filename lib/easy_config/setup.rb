@@ -30,9 +30,18 @@ module EasyConfig
       self.reset!
     end
 
-    def reset!
+    def append_config_path(path)
+      reset if @loaded
+      EasyConfig::PathResolver.config_paths << path
+    end
+
+    def reset
       EasyConfig::ConfigFile.reset!
       @loaded = false
+    end
+
+    def reset!
+      reset
       setup_config
     end
 

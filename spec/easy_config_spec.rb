@@ -45,4 +45,18 @@ describe EasyConfig do
     subject { EasyConfig.environment }
     it { should eq "test" }
   end
+
+  context "multiple config paths" do
+    before do
+      EasyConfig.append_config_path File.expand_path('./spec/fixtures/vendor')
+    end
+
+    it "reads from default config path" do
+      EasyConfig.redis.host.should eq "localhost"
+    end
+
+    it "reads from additional config path" do
+      EasyConfig.twitter.consumer_key.should eq "YOUR_CONSUMER_KEY"
+    end
+  end
 end

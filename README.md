@@ -40,6 +40,22 @@ In your ruby code, you do:
   })
 ```
 
+### Custom config paths
+
+You can provide additional custom config paths.
+
+Config file at `vendor/config/sample.yml`:
+```
+development:
+  property: "value"
+```
+Code:
+```
+  EasyConfig.append_config_path Rails.root.join('vendor/config')
+  puts EasyConfig.sample.property
+```
+Output will be: "value"
+
 ## How it works
 
 EasyConfig allows you to access your config files easily. All you have to do is
