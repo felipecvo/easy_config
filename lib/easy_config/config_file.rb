@@ -1,3 +1,5 @@
+require 'erb'
+
 class EasyConfig::ConfigFile
   attr_reader :name
 
