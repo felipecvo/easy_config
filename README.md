@@ -72,6 +72,7 @@ automatically.
 
 ## Supported rubies
 
+* 2.2
 * 2.1
 * 2.0
 * 1.9.3
@@ -81,4 +82,4 @@ automatically.
 
 [The MIT License](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2012-2014 Felipe Oliveira <[http://felipecvo.github.io/](http://felipecvo.github.io/)>
+Copyright (c) 2012-2015 Felipe Oliveira <[http://felipecvo.github.io/](http://felipecvo.github.io/)>
